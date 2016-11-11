@@ -260,8 +260,8 @@ struct buffer_info *get_registered_buf(struct msm_vidc_inst *inst,
 		for (i = 0; (i < temp->num_planes)
 			&& (i < VIDEO_MAX_PLANES); i++) {
 			bool ion_hndl_matches = temp->handle[i] ?
-				msm_smem_compare_buffers(inst->mem_client, fd,
-				temp->handle[i]->smem_priv) : false;
+						msm_smem_compare_buffers(inst->mem_client, fd,
+						temp->handle[i]->smem_priv) : false;
 			if (temp &&
 				(ion_hndl_matches ||
 				(device_addr == temp->device_addr[i])) &&
